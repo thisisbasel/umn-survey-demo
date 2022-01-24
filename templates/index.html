@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<p>This is a short survey for UMN students. Would you like to continue?</p>
+
+<a class="button" href="{{ url_for('survey') }}">Consent</a>
+<a class="button" href="{{ url_for('decline') }}">Decline</a>
+
+{% endblock %}

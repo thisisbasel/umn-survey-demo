@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<form class="pure-form" action="/thanks" method="POST" >
+
+  <div>
+      <h5>Which state do you currently live in? (Please input full name, not state code)</h5>
+      <input name="state" type="text" minlength="3" placeholder="Full State Name" required>
+  </div>
+
+  <div>
+      <h5>At which UMN campus are you currently enrolled?</h5>
+      <input name="campus" list="campuses" placeholder="Campus" required>
+      <datalist id="campuses">
+        <option value="Crookston">
+        <option value="Duluth">
+        <option value="Morris">
+        <option value="Rochester">
+        <option value="Twin-Cities">
+      </datalist>
+  </div>
+
+  <div> 
+      <h5>What is your current work / learning arrangement?</h5>
+        <input name="work" type="radio" value="person" required> Fully In-Person
+        <input name="work" type="radio" value="remote"> Fully Remote
+        <input name="work" type="radio" value="hybrid"> Hybrid
+  </div>
+
+ <div>
+    <h5>Please confirm you have read the survey closely</h5>
+    <input name="checked" type="checkbox" class="checkbox" value="checked" id='check' onclick='showTextArea()' required> I confirm this information is accurate
+    <textarea name="signed" style="display:none;" type="text" id='sign' placeholder="Please Type [Confirm]" required></textarea>
+ </div>
+
+ <div> 
+   <input type="submit" value="Next" class="btn btn-link" />
+ </div>
+
+ </form>
+ 
+
+
+{% endblock %}
